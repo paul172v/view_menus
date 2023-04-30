@@ -1,0 +1,76 @@
+@use "../../../sass/colors";
+
+.box-wrapper {
+  width: 100%;
+  padding: 3rem 2rem;
+  margin: 0 4rem;
+  background-color: colors.$primary-color;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  color: white;
+}
+
+@media (max-width: 1280px) {
+  .box-wrapper {
+    width: 90%;
+    margin-top: 4rem;
+  }
+}
+
+.heading {
+  font-size: 3rem;
+}
+
+.tagline {
+  font-family: "Yellowtail", cursive;
+  font-size: 3.4rem;
+}
+
+.sub-heading {
+  font-size: 1.6rem;
+  margin-top: 3rem;
+}
+
+.mains-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.meal-item {
+  border-top: 2px dotted colors.$secondary-color;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  width: 90%;
+  padding-top: 1rem;
+}
+
+.dietary {
+  color: colors.$secondary-color;
+  padding-top: 1rem;
+  font-size: 1.6rem;
+  margin: 0 2rem 0 0.5rem;
+}
+
+.u-row {
+  display: flex;
+}
+
+@media (max-width: 1280px) {
+  .u-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.side-item {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  border-top: 2px dotted colors.$secondary-color;
+  padding-top: 1rem;
+  width: 70%;
+}

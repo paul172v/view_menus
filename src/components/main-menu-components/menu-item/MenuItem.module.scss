@@ -1,0 +1,43 @@
+@use "../../../sass/colors";
+
+.item-wrapper {
+  width: 100%;
+
+  border-top: 2px dotted colors.$secondary-color;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.u-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.u-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 1.4rem;
+}
+
+.dietary {
+  color: colors.$secondary-color;
+}
+
+.details {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.add {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}

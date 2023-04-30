@@ -1,0 +1,48 @@
+@use "./../../../sass/colors";
+
+.item-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1280px) {
+  .item-wrapper {
+    width: 90vw;
+  }
+}
+
+.u-row {
+  display: flex;
+}
+
+.name,
+.country {
+  font-size: 2rem;
+}
+
+.centiliter {
+  font-size: 1.5rem;
+  align-self: flex-end;
+  color: colors.$secondary-color;
+  margin-left: 1rem;
+}
+
+.bottle,
+.ml250,
+.ml175 {
+  font-size: 1.5rem;
+  color: colors.$secondary-color;
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+
+.u-bold {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: colors.$secondary-color;
+  margin: 0.5rem 3rem 0.5rem 0;
+}
+
+.details {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}

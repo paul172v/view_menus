@@ -1,0 +1,22 @@
+@use "../../../sass/colors";
+
+.section-wrapper {
+  padding: 1rem;
+}
+
+.u-gap-small {
+  margin-top: 1rem;
+}
+
+.sub-heading {
+  color: colors.$secondary-color;
+  font-size: 2rem;
+
+  &__sides {
+    color: colors.$secondary-color;
+    font-size: 2rem;
+    border-bottom: 2px dotted colors.$secondary-color;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,37 @@
+@use "../../../sass/colors";
+
+.section-wrapper {
+  padding: 1rem 0 3rem 0;
+}
+
+@media (max-width: 1280px) {
+  .section-wrapper {
+    padding: 0 1rem;
+  }
+}
+
+.sub-heading {
+  color: colors.$secondary-color;
+  font-size: 2rem;
+
+  &__sides {
+    color: colors.$secondary-color;
+    font-size: 2rem;
+    border-bottom: 2px dotted colors.$secondary-color;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.details {
+  border-top: 2px dotted colors.$secondary-color;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.choose {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}

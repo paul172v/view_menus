@@ -1,0 +1,22 @@
+@use "../../../sass/colors";
+
+.item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.u-row {
+  display: flex;
+}
+
+.name,
+.dietary,
+.price {
+  font-size: 1.2rem;
+}
+
+.dietary {
+  color: colors.$secondary-color;
+  margin-left: 0.4rem;
+}
