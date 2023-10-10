@@ -28,26 +28,8 @@ const initState = {
 const reducer = (state, { type, value }) => {
   switch (type) {
     ///// toggle the dietary filters
-    case "toggleGlutenFree":
-      if (state.dietaryFilter === "gfo") {
-        return { ...state, dietaryFilter: "none" };
-      } else {
-        return { ...state, dietaryFilter: "gfo" };
-      }
-
-    case "toggleVegetarian":
-      if (state.dietaryFilter === "v") {
-        return { ...state, dietaryFilter: "none" };
-      } else {
-        return { ...state, dietaryFilter: "v" };
-      }
-
-    case "toggleVegan":
-      if (state.dietaryFilter === "vgo") {
-        return { ...state, dietaryFilter: "none" };
-      } else {
-        return { ...state, dietaryFilter: "vgo" };
-      }
+    case "setDietaryFilter":
+      return { ...state, dietaryFilter: value };
 
     ///// Setup the default state
     case "setDefaultMenusState":
@@ -74,6 +56,7 @@ const reducer = (state, { type, value }) => {
       return { ...state, loadedFriesArr: value };
     case "updateDessertsArr":
       return { ...state, dessertsArr: value };
+
     default:
       throw new Error();
   }
@@ -87,9 +70,10 @@ const Main = (props) => {
   //////////////////////////////////////
   useEffect(() => {
     fetch("http://127.0.0.1:5000/api/v1/main-menu/get-every-array", {
-      Method: "GET",
-      Headers: {
-        Accept: "application.json",
+      method: "GET", // Corrected here
+      headers: {
+        // Corrected here
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
     })
@@ -163,43 +147,119 @@ const Main = (props) => {
   }, []);
   ///////////////////////////////////////////////////////
 
+  const resetStateToDefault = () => {
+    dispatch({
+      type: "updateStartersArr",
+      value: state.defaultState.startersArr,
+    });
+    dispatch({
+      type: "updateSharersArr",
+      value: state.defaultState.sharersArr,
+    });
+    dispatch({
+      type: "updateMainsArr",
+      value: state.defaultState.mainsArr,
+    });
+    dispatch({
+      type: "updateSaladsArr",
+      value: state.defaultState.saladsArr,
+    });
+    dispatch({
+      type: "updateSteaksArr",
+      value: state.defaultState.steaksArr,
+    });
+    dispatch({
+      type: "updateBurgersArr",
+      value: state.defaultState.burgersArr,
+    });
+    dispatch({
+      type: "updateSteakSidesArr",
+      value: state.defaultState.steakSidesArr,
+    });
+    dispatch({
+      type: "updateSidesArr",
+      value: state.defaultState.sidesArr,
+    });
+    dispatch({
+      type: "updateLoadedFriesArr",
+      value: state.defaultState.loadedFriesArr,
+    });
+    dispatch({
+      type: "updateDessertsArr",
+      value: state.defaultState.dessertsArr,
+    });
+
+    dispatch({ type: "setDietaryFilter", value: "none" });
+  };
+
   const goToHomeHandler = () => {
     props.onChangePage("home");
   };
 
   const toggleGlutenFreeHandler = () => {
-    dispatch({ type: "toggleGlutenFree" });
-    filterAllArraysHandler("gfo");
+    if (state.dietaryFilter !== "gfo") {
+      resetStateToDefault();
+      dispatch({ type: "setDietaryFilter", value: "gfo" });
+      filterAllArraysHandler("gfo", state.defaultState);
+    } else if (state.dietaryFilter === "gfo") {
+      dispatch({ type: "setDietaryFilter", value: "none" });
+      resetStateToDefault();
+    }
   };
 
   const toggleVegetarianHandler = () => {
-    dispatch({ type: "toggleVegetarian" });
+    if (state.dietaryFilter !== "v") {
+      resetStateToDefault();
+      dispatch({ type: "setDietaryFilter", value: "v" });
+      filterAllArraysHandler("v", state.defaultState);
+    } else if (state.dietaryFilter === "v") {
+      dispatch({ type: "setDietaryFilter", value: "none" });
+      resetStateToDefault();
+    }
   };
 
   const toggleVeganHandler = () => {
-    dispatch({ type: "toggleVegan" });
+    if (state.dietaryFilter !== "vgo") {
+      resetStateToDefault();
+      dispatch({ type: "setDietaryFilter", value: "vgo" });
+      filterAllArraysHandler("vgo", state.defaultState);
+    } else if (state.dietaryFilter === "vgo") {
+      dispatch({ type: "setDietaryFilter", value: "none" });
+      resetStateToDefault();
+    }
   };
 
-  const filterAllArraysHandler = (type, dietaryArgument) => {
+  const filterAllArraysHandler = (dietaryArgument, state) => {
+    // Get the key names from the state and filter out undesired fields
     const keyNamesArr = Object.keys(state);
-    const index = keyNamesArr.indexOf("dietaryFilter");
-    keyNamesArr.splice(index, 1);
-    const index2 = keyNamesArr.indexOf("defaultState");
-    keyNamesArr.splice(index2, 1);
+    const filteredKeyNamesArr = keyNamesArr.filter(
+      (key) => key !== "dietaryFilter" && key !== "defaultState"
+    );
 
-    const individualMenuArr = [];
+    // Create a new state object with filtered arrays
+    const newState = {};
 
-    for (let key of keyNamesArr) {
-      if (key !== "defaultState" && key !== "dietaryFilter") {
-      }
-      individualMenuArr.push(state[key]);
+    // Loop through each key name (which corresponds to a menu array in the state)
+    filteredKeyNamesArr.forEach((key) => {
+      // Filter the array based on the dietaryArgument and assign it to the new state
+      newState[key] =
+        state[key]?.filter((item) => {
+          // Ensure the dietary property exists and is a string before splitting and checking it
+          if (typeof item.dietary === "string") {
+            const dietaryArr = item.dietary.split(",");
+            return dietaryArr.some((el) => el === dietaryArgument);
+          }
+          return false;
+        }) || []; // Ensure that if state[key] is undefined, an empty array is used instead
+    });
+
+    // Update the state with the new filtered arrays
+    for (let key of filteredKeyNamesArr) {
+      dispatch({
+        type: `update${key.charAt(0).toUpperCase() + key.slice(1)}`, // Convert key to PascalCase and prepend with 'update'
+        value: newState[key],
+      });
     }
-
-    const placeholderObj = {};
-    for (let i = 0; i < keyNamesArr.length; i++) {
-      placeholderObj[keyNamesArr[i]] = individualMenuArr[i];
-    }
-    console.log(placeholderObj);
   };
 
   return (
