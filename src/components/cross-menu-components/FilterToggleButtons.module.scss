@@ -1,0 +1,65 @@
+@use "../../sass/colors";
+
+.u-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.u-row {
+  display: flex;
+}
+
+@media (max-width: 1280px) {
+  .u-row {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.filter-text {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+@media (max-width: 1280px) {
+  .filter-text {
+    margin-bottom: 1rem;
+  }
+}
+
+.btn-filter {
+  background-color: colors.$secondary-color;
+  border-radius: 4px;
+  color: white;
+  font-size: 1.8rem;
+  padding: 1rem;
+  margin: 1rem 2rem 1rem 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+@media (max-width: 1280px) {
+  .btn-filter {
+    width: 30rem;
+    padding: 2rem 0;
+  }
+}
+
+.tick {
+  font-size: 3rem;
+  align-self: center;
+}
+
+.key {
+  font-size: 1.4rem;
+  color: colors.$secondary-color;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 1280px) {
+  .key {
+    width: 90%;
+  }
+}

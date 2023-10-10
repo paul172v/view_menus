@@ -1,0 +1,30 @@
+@use "../../../sass/colors";
+
+.box-wrapper {
+  width: 100%;
+  padding: 3rem 2rem;
+  margin: 0 4rem;
+  background-color: colors.$primary-color;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+@media (max-width: 1280px) {
+  .box-wrapper {
+    width: 90%;
+  }
+}
+
+.heading {
+  color: white;
+  font-size: 3rem;
+}
+
+.tagline {
+  color: white;
+  font-family: "Yellowtail", cursive;
+  font-size: 3.4rem;
+}

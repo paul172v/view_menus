@@ -1,0 +1,41 @@
+@use "../../../sass/colors";
+
+.section-wrapper-border {
+  border: 3px dotted colors.$secondary-color;
+  padding: 1rem;
+}
+
+@media (max-width: 1280px) {
+  .section-wrapper-border {
+    border: 3px dotted white;
+  }
+}
+
+.sub-heading {
+  color: colors.$secondary-color;
+  font-size: 2rem;
+
+  &__sides {
+    color: colors.$secondary-color;
+    font-size: 2rem;
+    border-bottom: 2px dotted colors.$secondary-color;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.u-gap {
+  margin-top: 2rem;
+}
+
+.u-bold {
+  border-top: 2px dotted colors.$secondary-color;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+
+  & p {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+}

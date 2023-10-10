@@ -1,0 +1,25 @@
+@use "../../sass/colors";
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.logo {
+  margin-bottom: 3rem;
+}
+
+.u-row {
+  display: flex;
+}
+
+@media (max-width: 1280px) {
+  .u-row {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+  }
+}

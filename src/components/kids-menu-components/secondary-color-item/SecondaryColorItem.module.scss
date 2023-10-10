@@ -1,0 +1,28 @@
+@use "../../../sass/colors";
+
+.item-wrapper {
+  border-top: 2px dotted colors.$background-color;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  color: white;
+}
+
+.u-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name,
+.price {
+  font-size: 1.8rem;
+}
+
+.dietary {
+  color: colors.$background-color;
+  margin-left: 1rem;
+}
+
+.details {
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+}
