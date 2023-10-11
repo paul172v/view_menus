@@ -1,4 +1,4 @@
-import React, { useReducer, useState, useEffect } from "react";
+import React, { useReducer, useEffect } from "react";
 import { MoonLoader } from "react-spinners";
 
 import classes from "./Main.module.scss";
@@ -12,6 +12,7 @@ import SidesWrapper from "../../components/main-menu-components/sides-wrapper/Si
 
 const initState = {
   dietaryFilter: "none",
+  menusLoaded: false,
   startersArr: null,
   sharersArr: null,
   mainsArr: null,
@@ -27,9 +28,13 @@ const initState = {
 
 const reducer = (state, { type, value }) => {
   switch (type) {
-    ///// toggle the dietary filters
+    ///// Set the dietary filters
     case "setDietaryFilter":
       return { ...state, dietaryFilter: value };
+
+    ///// Set the menuLoaded state
+    case "setMenusLoaded":
+      return { ...state, menusLoaded: value };
 
     ///// Setup the default state
     case "setDefaultMenusState":
@@ -64,8 +69,6 @@ const reducer = (state, { type, value }) => {
 
 const Main = (props) => {
   const [state, dispatch] = useReducer(reducer, initState);
-
-  const [menusLoaded, toggleMenusLoaded] = useState(false);
 
   //////////////////////////////////////
   useEffect(() => {
@@ -139,10 +142,10 @@ const Main = (props) => {
           },
         });
 
-        toggleMenusLoaded(true);
+        dispatch({ type: "setMenusLoaded", value: true });
       })
       .catch((error) => {
-        toggleMenusLoaded("error");
+        dispatch({ type: "setMenusLoaded", value: "error" });
       });
   }, []);
   ///////////////////////////////////////////////////////
@@ -265,7 +268,7 @@ const Main = (props) => {
   return (
     <div className={classes["page-wrapper"]}>
       <div className={classes["menu-wrapper"]}>
-        {menusLoaded === true && (
+        {state.menusLoaded === true && (
           <React.Fragment>
             <div className={classes["dinner-wrapper"]}>
               <h1 className={classes.heading}>Dinner</h1>
@@ -354,13 +357,13 @@ const Main = (props) => {
           </React.Fragment>
         )}
 
-        {menusLoaded === false && (
+        {state.menusLoaded === false && (
           <div className={classes["spinner-wrapper"]}>
             <MoonLoader color="#e08220" />
           </div>
         )}
 
-        {menusLoaded === "error" && (
+        {state.menusLoaded === "error" && (
           <div className={classes["spinner-wrapper"]}>
             <p className={classes["error-message"]}>
               Menus could not be loaded. Please try again later.

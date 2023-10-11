@@ -138,3 +138,15 @@
     margin-top: 4rem;
   }
 }
+
+.spinner-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1/5;
+}
+
+.error-message {
+  color: orange;
+  font-size: 4.2rem;
+}
