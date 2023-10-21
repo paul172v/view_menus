@@ -25,15 +25,21 @@ const SteakBorderWrapper = (props) => {
           />
         );
       })}
-      {props.steakSides.map((el) => {
-        return (
-          <div key={el.name}>
-            <p className={classes.add}>
-              Add {el.name} - {el.price}
-            </p>
-          </div>
-        );
-      })}
+      <div className={classes["sides-wrapper"]}>
+        {props.steakSides.map((el) => {
+          return (
+            <div key={el.name}>
+              <p className={classes.add}>
+                Add {el.name}{" "}
+                {el.dietary.length > 0 && (
+                  <span className={classes.orange}>({el.dietary})</span>
+                )}{" "}
+                - {el.price}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

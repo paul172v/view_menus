@@ -30,7 +30,14 @@
   font-size: 1.2rem;
   margin-top: 0.5rem;
 
+  margin-top: 1.5rem;
+}
+
+.sides-wrapper {
   border-top: 2px dotted colors.$secondary-color;
   margin-top: 1.5rem;
-  padding-top: 1.5rem;
+}
+
+.orange {
+  color: colors.$secondary-color;
 }
