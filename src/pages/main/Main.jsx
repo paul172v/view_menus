@@ -72,14 +72,17 @@ const Main = (props) => {
 
   //////////////////////////////////////
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/api/v1/main-menu/get-every-array", {
-      method: "GET", // Corrected here
-      headers: {
-        // Corrected here
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
+    fetch(
+      "https://view-backend-172v-e190af3eb261.herokuapp.com/api/v1/main-menu/get-every-array",
+      {
+        method: "GET", // Corrected here
+        headers: {
+          // Corrected here
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((response) => response.json())
       .then((dataObj) => {
         //handle data
