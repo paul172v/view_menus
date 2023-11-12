@@ -24,7 +24,9 @@ const MenuItem = (props) => {
         <p className={classes.details}>{props.details}</p>
         <p className={classes.add}>
           {props.add &&
-            props.add.length > 0 &&
+            props.add[0] !== undefined &&
+            props.add[0].name.length > 0 &&
+            props.add[0].price !== null &&
             `Add: ${props.add[0].name} - ${props.add[0].price.toFixed(2)} / ${
               props.add[1].name
             } - ${props.add[1].price.toFixed(2)}`}
