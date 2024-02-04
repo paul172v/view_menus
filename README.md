@@ -31,8 +31,8 @@ This project is built using the following technologies:
 
 - Frontend: React
 - Backend: Node.js
-- Database: [Specify the database technology if applicable]
-- Hosting: Netlify (Frontend), [Hosting provider for backend, if applicable]
+- Database: MongoDB
+- Hosting: Netlify (Frontend), Heroku (Backend)
 
 ## How to Run Locally
 
