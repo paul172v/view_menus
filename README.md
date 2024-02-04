@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+Sure, here's a sample README for your React/Node project, aimed at recruiters:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# View Online Menus - React/Node Project
 
-## Available Scripts
+Welcome to the View Online Menus project! This is a web application that allows users to view menus from different restaurants. Below, you will find information about the live site, as well as links to the frontend and backend code repositories.
 
-In the project directory, you can run:
+## Live Site
 
-### `npm start`
+You can access the live site of this project at the following URL:
+[View Online Menus - Live Site](https://172v-view-online-menus.netlify.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Feel free to explore the live site and experience the functionality.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Frontend Code Repository
 
-### `npm test`
+The frontend code for this project is available on GitHub. You can find it in the following repository:
+[View Online Menus - Frontend](https://github.com/paul172v/view_menus)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In the frontend repository, you will find the React code responsible for the user interface and client-side functionality of the application. You can review the code to see how the frontend is implemented, including components, state management, and interactions with the backend.
 
-### `npm run build`
+## Backend Code Repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The backend code for this project is also hosted on GitHub. You can access it in the following repository:
+[View Online Menus - Backend](https://github.com/paul172v/view-backend-server)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In the backend repository, you will find the Node.js code responsible for handling server-side operations, database interactions, and serving data to the frontend. You can explore the backend code to understand how data is processed and retrieved for the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+This project is built using the following technologies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Frontend: React
+- Backend: Node.js
+- Database: [Specify the database technology if applicable]
+- Hosting: Netlify (Frontend), [Hosting provider for backend, if applicable]
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to Run Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If you would like to run this project locally for development or testing purposes, follow these steps:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the frontend repository:
 
-## Learn More
+   ```
+   git clone https://github.com/paul172v/view_menus
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Clone the backend repository:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```
+   git clone https://github.com/paul172v/view-backend-server
+   ```
 
-### Code Splitting
+3. Install dependencies for both frontend and backend (you may need to install Node.js and npm if not already installed):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```
+   cd view_menus
+   npm install
+   ```
 
-### Analyzing the Bundle Size
+   ```
+   cd view-backend-server
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. Start the frontend and backend servers separately:
 
-### Making a Progressive Web App
+   - Frontend: Run `npm start` in the `view_menus` directory.
+   - Backend: Run `npm start` in the `view-backend-server` directory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+5. You should now be able to access the application locally in your web browser.
 
-### Advanced Configuration
+## Contact Information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+If you have any questions or need further information, please feel free to contact the project owner, Paul172V, through their GitHub repositories or via email at [paul@example.com].
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for your interest in the View Online Menus project!
