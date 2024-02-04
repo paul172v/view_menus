@@ -3,18 +3,16 @@ import React from "react";
 import classes from "./SaladItem.module.scss";
 
 const SaladItem = (props) => {
+  const dietaryText = props.dietary ? ` (${props.dietary})` : "";
+
   return (
     <div className={classes["item-wrapper"]}>
       <div className={classes["u-row"]}>
-        <p className={classes.topping}>
+        <p className={classes["topping"]}>
           {props.name}
-          {props.dietary === "" ? (
-            ""
-          ) : (
-            <span className={classes.dietary}> ({props.dietary})</span>
-          )}
+          <span className={classes["dietary"]}>{dietaryText}</span>
         </p>
-        <p className={classes.price}>{props.price.toFixed(2)}</p>
+        <p className={classes["price"]}>{props.price.toFixed(2)}</p>
       </div>
     </div>
   );

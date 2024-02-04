@@ -1,7 +1,5 @@
 import React from "react";
-
 import classes from "./SectionWrapper.module.scss";
-
 import MenuItem from "../menu-item/MenuItem";
 
 const SectionWrapper = (props) => {

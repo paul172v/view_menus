@@ -1,50 +1,51 @@
 @use "./../../../sass/colors";
 
+// Item Wrapper Styles
 .item-wrapper {
   margin-bottom: 3rem;
 }
 
+// Item Row Styles
 .item-row {
   display: grid;
   grid-template-columns: 8fr 2fr 2fr;
   grid-template-rows: 4rem 1fr;
-}
 
-@media (max-width: 1280px) {
-  .item-row {
-    display: grid;
+  @media (max-width: 1280px) {
     grid-template-columns: 60vw 15vw 15vw;
-    grid-template-rows: 4rem 1fr;
   }
 }
 
+// Name Wrapper and Font Size Styles
 .name-wrapper {
   display: flex;
 }
 
-.name {
+.name,
+.percentage,
+.price,
+.price-1,
+.price-2,
+.price-1-heading,
+.price-heading,
+.price-2-heading {
   font-size: 2rem;
+  @media (max-width: 1280px) {
+    font-size: 1.5rem;
+  }
+}
+
+.name {
   margin-bottom: 2rem;
 }
 
-@media (max-width: 1280px) {
-  .name {
-    font-size: 1.5rem;
-  }
-}
-
+// Percentage Styles
 .percentage {
   margin-left: 1rem;
-  font-size: 2rem;
   color: colors.$secondary-color;
 }
 
-@media (max-width: 1280px) {
-  .percentage {
-    font-size: 1.5rem;
-  }
-}
-
+// Prices Wrapper Styles
 .prices-wrapper {
   display: flex;
   width: 18rem;
@@ -52,62 +53,40 @@
   flex-direction: row-reverse;
 }
 
-.price,
-.price1,
-.price2 {
-  font-size: 2rem;
-}
-
-@media (max-width: 1280px) {
-  .price,
-  .price1,
-  .price2 {
-    font-size: 1.5rem;
-  }
-}
-
-.price1 {
+// Price Styles
+.price-1 {
   grid-column: 2/3;
 }
 
 .price,
-.price2,
-.halfPint {
+.price-2,
+.half-pint {
   grid-column: 3/4;
   text-align: center;
 }
 
+// Details Styles
 .details {
   grid-row: 2/3;
   columns: 1/2;
   width: 80%;
   font-size: 1.5rem;
   margin-top: -1rem;
-}
 
-@media (max-width: 1280px) {
-  .details {
+  @media (max-width: 1280px) {
     margin-top: 0;
     width: 90vw;
   }
 }
 
-.price1Heading {
+// Heading Styles
+.price-1-heading {
   color: colors.$secondary-color;
   grid-column: 2/3;
-  font-size: 2rem;
-}
-.priceHeading,
-.price2Heading {
-  color: colors.$secondary-color;
-  grid-column: 3/4;
-  font-size: 2rem;
 }
 
-@media (max-width: 1280px) {
-  .priceHeading,
-  .price1Heading,
-  .price2Heading {
-    font-size: 1.5rem;
-  }
+.price-heading,
+.price-2-heading {
+  color: colors.$secondary-color;
+  grid-column: 3/4;
 }

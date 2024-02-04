@@ -1,7 +1,5 @@
 import React from "react";
-
 import classes from "./SidesWrapper.module.scss";
-
 import SideItem from "../side-item/SideItem";
 
 const SidesWrapper = (props) => {

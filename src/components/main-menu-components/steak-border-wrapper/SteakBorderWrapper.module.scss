@@ -3,10 +3,8 @@
 .section-wrapper-border {
   border: 3px dotted colors.$secondary-color;
   padding: 1rem;
-}
 
-@media (max-width: 1280px) {
-  .section-wrapper-border {
+  @media (max-width: 1280px) {
     border: none;
     margin-top: 1rem;
   }
@@ -29,8 +27,6 @@
   font-weight: 700;
   font-size: 1.2rem;
   margin-top: 0.5rem;
-
-  margin-top: 1.5rem;
 }
 
 .sides-wrapper {

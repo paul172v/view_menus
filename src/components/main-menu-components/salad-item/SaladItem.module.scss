@@ -1,29 +1,29 @@
 @use "../../../sass/colors";
 
-.item-wrapper {
+item-wrapper {
   width: 100%;
 }
 
-.details {
+details {
   font-size: 1.2rem;
 }
 
-.u-row {
+u-row {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.topping {
+topping {
   font-size: 1.2rem;
   margin-top: 1rem;
 }
 
-.dietary {
+dietary {
   color: colors.$secondary-color;
 }
 
-.price {
+price {
   font-size: 1.2rem;
   padding-top: 1rem;
 }

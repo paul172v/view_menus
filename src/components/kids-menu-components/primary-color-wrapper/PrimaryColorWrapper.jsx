@@ -7,8 +7,8 @@ import PrimaryColorItem from "../primary-color-item/PrimaryColorItem";
 const PrimaryColorWrapper = (props) => {
   return (
     <div className={classes["box-wrapper"]}>
-      <h2 className={classes.heading}>{props.heading}</h2>
-      <p className={classes.tagline}>{props.tagline}</p>
+      <h2 className={classes["heading"]}>{props.heading}</h2>
+      <p className={classes["tagline"]}>{props.tagline}</p>
 
       {props.menuArray.map((el) => {
         if (el.dietary === undefined) {

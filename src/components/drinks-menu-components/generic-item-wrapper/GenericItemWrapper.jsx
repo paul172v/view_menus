@@ -1,27 +1,24 @@
 import React from "react";
 
 import classes from "./GenericItemWrapper.module.scss";
-
 import MenuItem from "../menu-item/MenuItem";
 
-const GenericItemWrapper = (props) => {
+const GenericItemWrapper = ({ heading, measure, menuArr }) => {
   return (
     <div className={classes["menu-wrapper"]}>
       <div className={classes["u-row"]}>
-        <h2 className={classes.heading}>{props.heading}</h2>
-        {props.measure && <p className={classes.measure}>{props.measure}ml</p>}
+        <h2 className={classes["heading"]}>{heading}</h2>
+        {measure && <p className={classes["measure"]}>{measure}ml</p>}
       </div>
-      {props.menuArr.map((el) => {
-        return (
-          <MenuItem
-            key={el.name}
-            name={el.name}
-            price={el.price}
-            percentage={el.percentage}
-            details={el.details}
-          />
-        );
-      })}
+      {menuArr.map((el) => (
+        <MenuItem
+          key={el.name}
+          name={el.name}
+          price={el.price}
+          percentage={el.percentage}
+          details={el.details}
+        />
+      ))}
     </div>
   );
 };

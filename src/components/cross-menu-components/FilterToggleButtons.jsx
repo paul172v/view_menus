@@ -14,7 +14,7 @@ const FilterToggleButtons = (props) => {
           >
             Gluten Free
           </button>
-          <div className={classes.tick}>
+          <div className={classes["tick"]}>
             {props.dietaryFilter === "gfo" && (
               <p className={classes["tick"]}>🗹</p>
             )}
@@ -30,7 +30,7 @@ const FilterToggleButtons = (props) => {
           >
             Vegetarian
           </button>
-          <div className={classes.tick}>
+          <div className={classes["tick"]}>
             {props.dietaryFilter === "v" && (
               <p className={classes["tick"]}>🗹</p>
             )}
@@ -43,7 +43,7 @@ const FilterToggleButtons = (props) => {
           <button onClick={props.toggleVegan} className={classes["btn-filter"]}>
             Vegan
           </button>
-          <div className={classes.tick}>
+          <div className={classes["tick"]}>
             {props.dietaryFilter === "vgo" && (
               <p className={classes["tick"]}>🗹</p>
             )}
@@ -53,12 +53,12 @@ const FilterToggleButtons = (props) => {
           </div>
         </div>
       </div>
-      <p className={classes.key}>
+      <p className={classes["key"]}>
         gfo - Gluten Free Option Available, v - Vegetarian, vgo - Vegan Option
         Available
       </p>
     </React.Fragment>
-  ); //
+  );
 };
 
 export default FilterToggleButtons;

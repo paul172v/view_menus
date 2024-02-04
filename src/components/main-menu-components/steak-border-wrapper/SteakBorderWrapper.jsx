@@ -1,7 +1,5 @@
 import React from "react";
-
 import classes from "./SteakBorderWrapper.module.scss";
-
 import SteakItem from "../steak-item/SteakItem";
 
 const SteakBorderWrapper = (props) => {
@@ -29,10 +27,10 @@ const SteakBorderWrapper = (props) => {
         {props.steakSides.map((el) => {
           return (
             <div key={el.name}>
-              <p className={classes.add}>
+              <p className={classes["add"]}>
                 Add {el.name}{" "}
                 {el.dietary.length > 0 && (
-                  <span className={classes.orange}>({el.dietary})</span>
+                  <span className={classes["orange"]}>({el.dietary})</span>
                 )}{" "}
                 - {el.price}
               </p>

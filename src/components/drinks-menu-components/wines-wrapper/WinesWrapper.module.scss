@@ -7,10 +7,8 @@
   border-bottom: 4px dotted colors.$secondary-color;
   padding-bottom: 1.5rem;
   margin-bottom: 4rem;
-}
 
-@media (max-width: 1280px) {
-  .heading {
+  @media (max-width: 1280px) {
     width: 90vw;
     font-size: 3rem;
   }

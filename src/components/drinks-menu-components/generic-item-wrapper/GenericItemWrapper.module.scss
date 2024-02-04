@@ -1,5 +1,6 @@
 @use "./../../../sass/colors";
 
+// Menu item styles
 .menu-item {
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@
   width: 100%;
 }
 
+// Universal row styles
 .u-row {
   display: flex;
   justify-content: space-between;
@@ -15,26 +17,24 @@
   border-bottom: 4px dotted colors.$secondary-color;
   padding-bottom: 1.5rem;
   margin-bottom: 4rem;
-}
 
-@media (max-width: 1280px) {
-  .u-row {
+  @media (max-width: 1280px) {
     margin-bottom: 4rem;
     width: 90vw;
   }
 }
 
+// Heading styles
 .heading {
   font-size: 4rem;
   color: colors.$secondary-color;
-}
 
-@media (max-width: 1280px) {
-  .heading {
+  @media (max-width: 1280px) {
     font-size: 3rem;
   }
 }
 
+// Measure styles
 .measure {
   color: colors.$secondary-color;
   font-size: 3rem;
